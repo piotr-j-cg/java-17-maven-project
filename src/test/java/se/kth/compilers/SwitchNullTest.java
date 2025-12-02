@@ -1,10 +1,13 @@
 package se.kth.compilers;
 
-public class SwitchNullExample {
+import org.junit.jupiter.api.Test;
+
+public class SwitchNullTest {
 
     public static final String SOME_CASE = "default";
 
-    public static void main(String[] args) {
+    @Test
+    public void switchNullShouldFailOnJava21() {
         String value = getNull();
         switch (value) {
             case null: // ✅ Valid in Java 17
